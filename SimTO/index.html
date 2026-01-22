@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimTO: A simulation-based topology optimization framework for bespoke soft robotic grippers</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">  <!-- Font used -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Icon for dataset and paper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">  <!-- Icon for arxiv -->
+    
+    <style>
+
+        /* Defining primary-blue and text-gray as global variables to use later for button hovering and author sub-text*/ 
+        :root { --primary-blue: #007bff; --text-gray: #555; }
+        /* Imported Google Sans in the head. Sans-serif is a fallback if Google Sans fails */ 
+        body { font-family: 'Google Sans', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #fff; }
+
+        /* Hero Section */
+        .hero {
+            background: #fff; /* Pure white background */
+            padding: 60px 20px 20px 20px; /* Top, Right, Bottom, Left margins */
+            text-align: center;
+        }
+
+        .hero h1 { 
+            font-size: 3rem; 
+            max-width: 900px; /* Limits title width to keep it readable */
+            margin: 0 auto 30px auto; /* Centers the title and adds space below it */
+            font-weight: 700; 
+            color: #222; 
+            line-height: 1.2;
+        }
+
+        /* Authors & Links */
+        .authors { text-align: center; font-size: 1.2rem; margin-bottom: 20px; }
+        .affiliations {
+            line-height: 1.2; /* This reduces the space between the CSIRO and UQ lines */
+            margin-top: 10px; /* This adds a nice gap between the authors and the list */
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        .links { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #333;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn:hover { background: var(--primary-blue); }
+
+
+        /* Specific styling for the figure/caption area */
+        .teaser-image {
+            max-width: 1000px;
+            margin: 40px auto 10px auto; /* Changed from '40px auto' to reduce bottom space */
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        .teaser-image img {
+            width: 100%;
+            max-width: 800px; /* Keeps the figure from being too giant */
+            height: auto;
+        }
+        .caption {
+            font-size: 1.1rem;
+            color: #444;
+            margin-top: 15px;
+            padding: 0 40px;
+        }
+        .ai { font-size: 1.2rem; vertical-align: middle; }
+
+        /* Fix the zero margin issue for the Abstract and Video sections */
+        .container {
+            max-width: 1000px; /* Limits width to match title/teaser */
+            margin: 0 auto;    /* Centers the column */
+            padding: 0 20px 80px 20px; /* Safety margin for mobile + bottom breathing room */
+        }
+
+        /* Video Grids */
+        h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; font-weight: 500; }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        video { width: 100%; border-radius: 8px; background: #000; }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: repeat(1, 1fr); }
+            .hero h1 { font-size: 2.2rem; }
+        }
+
+        /* BibTeX Styling */
+        pre { 
+            background: #dcdcdc; /* The specific light-grey from the example */
+            color: #000000;      /* Pure black text */
+            padding: 1rem;       /* 16px equivalent padding */
+            border-radius: .25rem; 
+            overflow: auto; 
+            border: none;        /* Remove any existing border */
+        }
+
+        pre code {
+            /* Use a clear monospaced font at a legible size */
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #000000;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            font-weight: 540;    /* Gives it that slightly bolder look you liked */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>SimTO: A simulation-based topology optimization framework for bespoke soft robotic grippers</h1>
+    
+    <div class="authors">
+        Kurt Enkera<sup>1,2</sup>, Josh Pinskier<sup>1</sup>, Marcus Gallagher<sup>2</sup>, David Howard<sup>1</sup>
+        <div class="affiliations">
+                <span><sup>1</sup>CSIRO Robotics</span><br>
+                <span><sup>2</sup>The University of Queensland</span>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="https://arxiv.org/link" class="btn"><i class="far fa-file-pdf"></i> Paper</a>
+        <a href="https://github.com/kurtenkera/SimTO-Dataset" class="btn"><i class="fab fa-github"></i> Dataset</a>
+        <a href="https://arxiv.org/abs/link" class="btn"><i class="ai ai-arxiv"></i> arXiv</a>
+    </div>
+
+    <div class="teaser-image">
+        <img src="media/hero.png" alt="SimTO Framework Overview">
+        <p class="caption">
+            <strong>The SimTO framework:</strong> Given an arbitrary <em>feature-rich</em> object, SimTO generates bespoke soft fingers which conform to that object's shape under actuation.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+
+    <section>
+        <h2>Abstract</h2>
+        <p>
+            Soft robotic grippers are essential for grasping delicate, geometrically complex objects in manufacturing, healthcare and agriculture. However, existing grippers struggle to grasp <em>feature-rich</em> objects with high topological variability, including gears with sharp tooth profiles on automotive assembly lines, corals with fragile protrusions, or vegetables with irregular branching structures like broccoli. Unlike simple geometric primitives such as cubes or spheres, feature-rich objects lack a clear "optimal" contact surface, making them both difficult to grasp and susceptible to damage when grasped by existing gripper designs. Safe handling of such objects therefore requires <em>specialized</em> soft grippers whose morphology is tailored to the object’s features. Topology optimization offers a promising approach for producing specialized grippers, but its utility is limited by the requirement for pre-defined load cases. For soft grippers interacting with feature-rich objects, these loads arise from hundreds of unpredictable gripper-object contact forces during grasping and are unknown <em>a priori</em>. To address this problem, we introduce <em>SimTO</em>, a framework that enables high-resolution topology optimization by automatically extracting load cases from a contact-based physics simulator, eliminating the need for manual load specification. Given an arbitrary feature-rich object, <em>SimTO</em> produces highly customized soft grippers with fine-grained morphological features tailored to the object geometry. Numerical results show our designs are not only highly specialized to feature-rich objects, but also generalize to unseen objects.
+        </p>
+    </section>
+
+    <section>
+        <h2>Specialized curvy ball designs</h2>
+        <div class="video-grid">
+            <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/9_curvyballs.mp4" type="video/mp4">
+            </video>
+            </div>
+    </section>
+
+    <section>
+        <h2>Specialized gear designs</h2>
+        <div class="video-grid">
+            <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/9_gears.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section>
+        <h2>Specialized hourglass designs</h2>
+        <div class="video-grid">
+            <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/9_hourglass.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section>
+        <h2>Specialized spiky ball designs</h2>
+        <div class="video-grid">
+            <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/9_spikyballs.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section>
+        <h2>Specialized star designs</h2>
+        <div class="video-grid">
+            <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/9_stars.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section>
+        <h2>BibTeX</h2>
+        <pre><code>@article{enkera2026simTO,
+title  = {SimTO: A simulation-based topology optimization framework for bespoke soft robotic grippers},
+author = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
+journal = {Submitted to Structural and Multidisciplinary Optimization},
+year = {2026},
+url = {https://arxiv.org/abs/XXXX.XXXX}
+}</code></pre>
+    </section>
+
+</div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const vids = document.querySelectorAll('video.lazy-video');
+      if('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              const v = entry.target;
+              const src = v.querySelector('source').dataset.src;
+              v.querySelector('source').src = src;
+              v.load();
+              v.play().catch(()=>{});
+              observer.unobserve(v);
+            }
+          });
+        }, { rootMargin: '200px' });
+        vids.forEach(v => obs.observe(v));
+      } else {
+        vids.forEach(v => {
+          const src = v.querySelector('source').dataset.src;
+          v.querySelector('source').src = src;
+          v.load();
+          v.play().catch(()=>{});
+        });
+      }
+    });
+  </script>
+
+
+</body>
+</html>
