@@ -82,6 +82,9 @@
         }
 
         h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; font-weight: 500; }
+        /* Sub-titles, e.g. one per video in Representative Examples */
+        h3 { font-size: 1.3rem; font-weight: 500; color: #333; margin: 45px 0 0 0; }
+        h2 + h3 { margin-top: 20px; }
 
         /* Full-width figures inside sections */
         .figure { margin-top: 20px; text-align: center; }
@@ -193,13 +196,14 @@
             It is then re-grasped and lifted during <span class="math">t</span><sub>3</sub> before undergoing four impulse-resistance tests of increasing magnitude:
             the first accelerates the gripper in each of the five directions shown in blue, and the remaining three shake it at increasing accelerations.
             If the object is still held, it is placed back on the target at <span class="math">t</span><sub>4</sub>.
-            Each design is tested on five feature-rich objects, each in six grasp poses (30 trials per design).
+            Each design is tested on five feature-rich objects in six grasp poses (30 trials per design).
         </p>
     </section>
 
     <section>
         <h2>Representative Examples</h2>
 
+        <h3>Object: Curvy ball</h3>
         <div class="video-grid">
             <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
                 <source data-src="media/curvy_comparison_synced.mp4" type="video/mp4">
@@ -209,6 +213,7 @@
             SimTO-Robust (top left) vs. a specialised SimTO curvy ball design (top right), a rigid gripper (bottom left) and soft reference (bottom right). The SimTO design, optimised for a lower grasp height, fails to secure the object in this pose. The rigid gripper cannot adapt to the object, so it fails to place the object on the white strip. The soft reference drops the object under extreme disturbances, while the SimTO-Robust design holds on throughout.
         </p>
 
+        <h3>Object: Hourglass</h3>
         <div class="video-grid">
             <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
                 <source data-src="media/hourglass_comparison_synced.mp4" type="video/mp4">
@@ -219,7 +224,8 @@
         </p>
 
 
-        <!-- To add another example, copy the video-grid + caption pair above:
+        <!-- To add another example, copy the title + video-grid + caption block above:
+        <h3>Object: Gear</h3>
         <div class="video-grid">
             <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
                 <source data-src="media/example2.mp4" type="video/mp4">
