@@ -186,11 +186,12 @@
             <img src="media/experimental_setup.png" alt="Experimental Grasp Robustness Tests">
         </div>
         <p class="caption">
-            <!-- TODO: check this caption against the paper -->
-            (a) A soft gripper and (b) a rigid baseline gripper mounted on a UR robot arm.
-            (c) The gripper picks up the object (t<sub>0</sub>&ndash;t<sub>2</sub>), (d) is subjected to external
-            disturbances of increasing speed (t<sub>3</sub>), and (e) places the object back down (t<sub>4</sub>).
-            Each grasp is scored from 0 (failed pick-up) to 6 (survived all disturbances and placed successfully).
+            <strong>(a):</strong> Soft grippers were mounted on a UR10e arm and actuated by a linear pneumatic actuator.
+            <strong>(b):</strong> Our parallel-jaw rigid gripper.
+            <strong>(c)&ndash;(e):</strong> In each trial, the object is first grasped at <span class="math">t</span><sub>0</sub>, transported during <span class="math">t</span><sub>1</sub> and placed at <span class="math">t</span><sub>2</sub>.
+            It is then re-grasped and lifted during <span class="math">t</span><sub>3</sub> before undergoing four impulse-resistance tests, where the impulses grow in magnitude.
+            First, the gripper is accelerated in all five directions shown in blue. After, the gripper is shaken at three increasing accelerations.
+            If the object is still held, it is placed back on the target at <span class="math">t</span><sub>4</sub>.
         </p>
     </section>
 
