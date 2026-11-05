@@ -20,7 +20,6 @@
       --link: #1a5fb4;
       --link-hover: #e3761c;
       --rule: #e5e5e5;
-      --bib-bg: #f5f5f5;
     }
 
     * { box-sizing: border-box; }
@@ -125,36 +124,12 @@
     .pub .authors .me { font-weight: 700; }
     .pub .venue { font-style: italic; color: var(--muted); margin-bottom: 6px; }
     .pub .note { color: #c0392b; font-weight: 700; font-style: normal; }
-    .pub .links a + a::before,
-    .pub .links summary::before {
+    .pub .links a + a::before {
       content: "/";
       color: #bbb;
       margin: 0 7px;
     }
-    .pub .tldr { margin-top: 6px; font-size: 0.95rem; color: #444; }
 
-    /* bibtex toggle */
-    .pub details { display: inline; }
-    .pub details summary {
-      display: inline;
-      cursor: pointer;
-      color: var(--link);
-      list-style: none;
-    }
-    .pub details summary::-webkit-details-marker { display: none; }
-    .pub details summary:hover { color: var(--link-hover); }
-    .pub details[open] pre { display: block; }
-    .pub pre {
-      background: var(--bib-bg);
-      font-family: Consolas, Monaco, 'Courier New', monospace;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      padding: 12px 14px;
-      border-radius: 4px;
-      overflow-x: auto;
-      margin: 10px 0 0;
-      white-space: pre;
-    }
 
     /* ---------- Footer ---------- */
     footer {
@@ -181,7 +156,6 @@
 
   <!-- ================= HEADER ================= -->
   <header class="header">
-    <!-- TODO: add your photo as images/kurt.jpg (square crop works best) -->
     <img class="avatar" src="images/kurt.png" alt="Kurt Enkera">
     <div>
       <h1>Kurt Enkera</h1>
@@ -192,9 +166,7 @@
       -->
       <div class="social">
         <a href="https://github.com/kurtenkera"><i class="fab fa-github"></i>GitHub</a><span class="sep">/</span>
-        <!-- TODO: replace with your Scholar profile URL -->
-        <a href="https://scholar.google.com/citations?user=atyU_ZgAAAAJ&hl=en"><i class="ai ai-google-scholar"></i>Google Scholar</a><span class="sep">/</span>
-        <!-- TODO: replace with your LinkedIn URL -->
+        <a href="https://scholar.google.com/citations?user=atyU_ZgAAAAJ"><i class="ai ai-google-scholar"></i>Google Scholar</a><span class="sep">/</span>
         <a href="https://www.linkedin.com/in/kurt-enkera-251482136"><i class="fab fa-linkedin"></i>LinkedIn</a>
       </div>
     </div>
@@ -232,10 +204,8 @@
         <img src="images/simto-robust.png" alt="SimTO-Robust teaser">
       </a>
       <div class="info">
-        <!-- TODO: replace with the exact paper title -->
         <a class="title" href="https://kurtenkera.github.io/SimTO-Robust/">
-          SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp
-Pose and Object Geometry
+          SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry
         </a>
         <div class="authors">
           <span class="me">Kurt Enkera</span>, Josh Pinskier, Marcus Gallagher, David Howard
@@ -243,25 +213,8 @@ Pose and Object Geometry
         <div class="venue">arXiv preprint, 2026 <span class="note">(under review)</span></div>
         <div class="links">
           <a href="https://kurtenkera.github.io/SimTO-Robust/">Webpage</a>
-          <!-- TODO: replace XXXX.XXXXX with the arXiv ID -->
-          <a href="https://https://arxiv.org/pdf/2610.39560">arXiv</a>
+          <a href="https://arxiv.org/abs/2610.39560">arXiv</a>
           <!-- <a href="https://github.com/kurtenkera/SimTO-Robust">Code</a> -->
-          <details>
-            <summary>BibTeX</summary>
-<pre>@misc{enkera2026simtorobust,
-  title         = {SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp
-Pose and Object Geometry},
-  author        = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
-  year          = {2026},
-  eprint        = {XXXX.XXXXX},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.RO}
-}</pre>
-          </details>
-        </div>
-        <div class="tldr">
-          Extends SimTO by simulating grasps across multiple object poses and geometries and combining
-          the extracted contact loads, producing soft grippers that remain robust to pose and shape variation.
         </div>
       </div>
     </div>
@@ -285,21 +238,6 @@ Pose and Object Geometry},
           <a href="https://link.springer.com/article/10.1007/s00158-026-04373-z">Paper</a>
           <a href="https://arxiv.org/abs/2601.19098">arXiv</a>
           <a href="https://github.com/kurtenkera/SimTO-Dataset">Dataset</a>
-          <details>
-            <summary>BibTeX</summary>
-<pre>@article{enkera2026simto,
-  title   = {SimTO: A two-stage, simulation-driven topology optimization framework for bespoke soft robotic grippers},
-  author  = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
-  journal = {Structural and Multidisciplinary Optimization},
-  year    = {2026},
-  doi     = {10.1007/s00158-026-04373-z}
-}</pre>
-          </details>
-        </div>
-        <div class="tldr">
-          Automatically extracts load cases from a contact-rich grasping simulation, then runs classical
-          topology optimization to produce soft fingers tailored to feature-rich objects such as gears,
-          stars and spiky balls.
         </div>
       </div>
     </div>
