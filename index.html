@@ -20,6 +20,7 @@
       --link: #1a5fb4;
       --link-hover: #e3761c;
       --rule: #e5e5e5;
+      --bib-bg: #f5f5f5;
     }
 
     * { box-sizing: border-box; }
@@ -124,12 +125,34 @@
     .pub .authors .me { font-weight: 700; }
     .pub .venue { font-style: italic; color: var(--muted); margin-bottom: 6px; }
     .pub .note { color: #c0392b; font-weight: 700; font-style: normal; }
-    .pub .links a + a::before {
+    .pub .links a + a::before,
+    .pub .links summary::before {
       content: "/";
       color: #bbb;
       margin: 0 7px;
     }
 
+    /* bibtex toggle */
+    .pub details { display: inline; }
+    .pub details summary {
+      display: inline;
+      cursor: pointer;
+      color: var(--link);
+      list-style: none;
+    }
+    .pub details summary::-webkit-details-marker { display: none; }
+    .pub details summary:hover { color: var(--link-hover); }
+    .pub pre {
+      background: var(--bib-bg);
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      padding: 12px 14px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 10px 0 0;
+      white-space: pre;
+    }
 
     /* ---------- Footer ---------- */
     footer {
@@ -215,6 +238,17 @@
           <a href="https://kurtenkera.github.io/SimTO-Robust/">Webpage</a>
           <a href="https://arxiv.org/abs/2610.39560">arXiv</a>
           <!-- <a href="https://github.com/kurtenkera/SimTO-Robust">Code</a> -->
+          <details>
+            <summary>BibTeX</summary>
+<pre>@misc{enkera2026simtorobust,
+  title         = {SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry},
+  author        = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
+  year          = {2026},
+  eprint        = {2610.39560},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}</pre>
+          </details>
         </div>
       </div>
     </div>
@@ -238,6 +272,16 @@
           <a href="https://link.springer.com/article/10.1007/s00158-026-04373-z">Paper</a>
           <a href="https://arxiv.org/abs/2601.19098">arXiv</a>
           <a href="https://github.com/kurtenkera/SimTO-Dataset">Dataset</a>
+          <details>
+            <summary>BibTeX</summary>
+<pre>@article{enkera2026simto,
+  title   = {SimTO: A two-stage, simulation-driven topology optimization framework for bespoke soft robotic grippers},
+  author  = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
+  journal = {Structural and Multidisciplinary Optimization},
+  year    = {2026},
+  doi     = {10.1007/s00158-026-04373-z}
+}</pre>
+          </details>
         </div>
       </div>
     </div>
