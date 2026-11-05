@@ -93,7 +93,7 @@
     .pub {
       display: flex;
       gap: 24px;
-      align-items: flex-start;
+      align-items: center;
       padding: 18px 0;
     }
     .pub + .pub { border-top: 1px solid #f0f0f0; }
@@ -169,7 +169,7 @@
       .page { padding-top: 32px; }
       .header { flex-direction: column; text-align: center; gap: 18px; }
       .header img.avatar { width: 150px; height: 150px; }
-      .pub { flex-direction: column; gap: 12px; }
+      .pub { flex-direction: column; gap: 12px; align-items: flex-start; }
       .pub .thumb { flex: none; width: 100%; max-width: 420px; }
     }
   </style>
@@ -223,7 +223,6 @@
     <!-- ---------- SimTO-Robust ---------- -->
     <div class="pub">
       <a class="thumb" href="https://kurtenkera.github.io/SimTO-Robust/">
-        <!-- TODO: add a teaser figure at images/simto-robust.png -->
         <img src="https://kurtenkera.github.io/SimTO-Robust/media/fig1.png" alt="SimTO-Robust teaser">
       </a>
       <div class="info">
