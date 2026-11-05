@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kurt Enkera</title>
+  <meta name="description" content="Kurt Enkera — PhD researcher at The University of Queensland and CSIRO Robotics, working on computational design of soft robotic grippers.">
+
+  <!-- Optional: drop a favicon.png next to this file -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
+
+  <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --link: #1a5fb4;
+      --link-hover: #e3761c;
+      --rule: #e5e5e5;
+      --bib-bg: #f5f5f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+      margin: 0;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+    }
+
+    /* ---------- Header ---------- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    .header img.avatar {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;          /* change to 8px for a rounded square */
+      flex-shrink: 0;
+      background: #eee;            /* visible while there's no photo yet */
+    }
+    .header h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      line-height: 1.2;
+    }
+    .header .role {
+      font-size: 1.1rem;
+      margin: 0 0 2px;
+    }
+    .header .affil {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .header .social a {
+      font-size: 1.02rem;
+      white-space: nowrap;
+    }
+    .header .social i { margin-right: 5px; }
+    .header .social .sep { color: #bbb; margin: 0 8px; }
+
+    /* ---------- Sections ---------- */
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 44px 0 18px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+    section p { margin: 0 0 12px; }
+
+    /* ---------- Publications ---------- */
+    .pub {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 18px 0;
+    }
+    .pub + .pub { border-top: 1px solid #f0f0f0; }
+
+    .pub .thumb {
+      flex: 0 0 230px;
+      width: 230px;
+    }
+    .pub .thumb img,
+    .pub .thumb video {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      border: 1px solid #eee;
+    }
+
+    .pub .info { flex: 1; min-width: 0; }
+    .pub .title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .pub a.title:hover { color: var(--link-hover); }
+    .pub .authors { margin-bottom: 2px; }
+    .pub .authors .me { font-weight: 700; }
+    .pub .venue { font-style: italic; color: var(--muted); margin-bottom: 6px; }
+    .pub .note { color: #c0392b; font-weight: 700; font-style: normal; }
+    .pub .links a + a::before,
+    .pub .links summary::before {
+      content: "/";
+      color: #bbb;
+      margin: 0 7px;
+    }
+    .pub .tldr { margin-top: 6px; font-size: 0.95rem; color: #444; }
+
+    /* bibtex toggle */
+    .pub details { display: inline; }
+    .pub details summary {
+      display: inline;
+      cursor: pointer;
+      color: var(--link);
+      list-style: none;
+    }
+    .pub details summary::-webkit-details-marker { display: none; }
+    .pub details summary:hover { color: var(--link-hover); }
+    .pub details[open] pre { display: block; }
+    .pub pre {
+      background: var(--bib-bg);
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      padding: 12px 14px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 10px 0 0;
+      white-space: pre;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 56px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: #999;
+      text-align: center;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 640px) {
+      .page { padding-top: 32px; }
+      .header { flex-direction: column; text-align: center; gap: 18px; }
+      .header img.avatar { width: 150px; height: 150px; }
+      .pub { flex-direction: column; gap: 12px; }
+      .pub .thumb { flex: none; width: 100%; max-width: 420px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <!-- TODO: add your photo as images/kurt.jpg (square crop works best) -->
+    <img class="avatar" src="images/kurt.jpg" alt="Kurt Enkera">
+    <div>
+      <h1>Kurt Enkera</h1>
+      <p class="role">PhD Candidate</p>
+      <p class="affil">The University of Queensland &amp; CSIRO Robotics</p>
+      <!-- Optional email line:
+      <p class="affil">kurtenkera [at] gmail [dot] com</p>
+      -->
+      <div class="social">
+        <a href="https://github.com/kurtenkera"><i class="fab fa-github"></i>GitHub</a><span class="sep">/</span>
+        <!-- TODO: replace with your Scholar profile URL -->
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID"><i class="ai ai-google-scholar"></i>Google Scholar</a><span class="sep">/</span>
+        <!-- TODO: replace with your LinkedIn URL -->
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BIOGRAPHY ================= -->
+  <section>
+    <h2>Biography</h2>
+    <p>
+      I am a PhD candidate at <a href="https://www.uq.edu.au/">The University of Queensland</a> and
+      <a href="https://research.csiro.au/robotics/">CSIRO Robotics</a> in Brisbane, Australia,
+      <!-- TODO: confirm supervisor list / order -->
+      advised by <a href="#">David Howard</a>, <a href="#">Josh Pinskier</a> and <a href="#">Marcus Gallagher</a>.
+      My research focuses on the <strong>computational design of soft robotic grippers</strong>:
+      combining topology optimization, dynamic finite-element simulation, and machine learning
+      to automatically generate bespoke, manufacturable grippers, which I then fabricate and validate
+      on physical hardware.
+    </p>
+    <p>
+      I am also a Machine Learning Engineer at <a href="https://waymo.com/">Waymo</a>, where I develop
+      world models to improve the simulation of long-tail driving scenarios.
+      <!-- TODO: add institution after "Physics", e.g. "at The University of Queensland" -->
+      Before my PhD, I completed a Bachelor of Science with Honours in Physics, where my honours thesis applied normalizing flows to Feynman path integrals.
+    </p>
+    <p>
+      I am broadly interested in AI for science and engineering design — in particular, using simulation
+      and learning to solve physical design problems that are hard to specify by hand.
+    </p>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section>
+    <h2>Publications</h2>
+
+    <!--
+      TO ADD A PAPER: copy one <div class="pub"> ... </div> block and edit it.
+      The thumbnail can be an <img> or a muted looping <video>, e.g.
+        <video src="..." autoplay muted loop playsinline></video>
+      Links can point anywhere: kurtenkera.github.io/PaperName, an external
+      collaborator site (e.g. https://somelab.github.io/project), etc.
+    -->
+
+    <!-- ---------- SimTO-Robust ---------- -->
+    <div class="pub">
+      <a class="thumb" href="https://kurtenkera.github.io/SimTO-Robust/">
+        <!-- TODO: add a teaser figure at images/simto-robust.png -->
+        <img src="images/simto-robust.png" alt="SimTO-Robust teaser">
+      </a>
+      <div class="info">
+        <!-- TODO: replace with the exact paper title -->
+        <a class="title" href="https://kurtenkera.github.io/SimTO-Robust/">
+          SimTO-Robust: PAPER TITLE HERE
+        </a>
+        <div class="authors">
+          <span class="me">Kurt Enkera</span>, Josh Pinskier, Marcus Gallagher, David Howard
+        </div>
+        <div class="venue">arXiv preprint, 2026 <span class="note">(under review)</span></div>
+        <div class="links">
+          <a href="https://kurtenkera.github.io/SimTO-Robust/">Webpage</a>
+          <!-- TODO: replace XXXX.XXXXX with the arXiv ID -->
+          <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv</a>
+          <!-- <a href="https://github.com/kurtenkera/SimTO-Robust">Code</a> -->
+          <details>
+            <summary>BibTeX</summary>
+<pre>@misc{enkera2026simtorobust,
+  title         = {PAPER TITLE HERE},
+  author        = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
+  year          = {2026},
+  eprint        = {XXXX.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
+}</pre>
+          </details>
+        </div>
+        <div class="tldr">
+          Extends SimTO by simulating grasps across multiple object poses and geometries and combining
+          the extracted contact loads, producing soft grippers that remain robust to pose and shape variation.
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- SimTO ---------- -->
+    <div class="pub">
+      <a class="thumb" href="https://kurtenkera.github.io/SimTO/">
+        <!-- Re-uses the hero figure from the SimTO project page -->
+        <img src="https://kurtenkera.github.io/SimTO/media/hero.png" alt="SimTO teaser">
+      </a>
+      <div class="info">
+        <a class="title" href="https://kurtenkera.github.io/SimTO/">
+          SimTO: A two-stage, simulation-driven topology optimization framework for bespoke soft robotic grippers
+        </a>
+        <div class="authors">
+          <span class="me">Kurt Enkera</span>, Josh Pinskier, Marcus Gallagher, David Howard
+        </div>
+        <div class="venue">Structural and Multidisciplinary Optimization, 2026</div>
+        <div class="links">
+          <a href="https://kurtenkera.github.io/SimTO/">Webpage</a>
+          <a href="https://link.springer.com/article/10.1007/s00158-026-04373-z">Paper</a>
+          <a href="https://arxiv.org/abs/2601.19098">arXiv</a>
+          <a href="https://github.com/kurtenkera/SimTO-Dataset">Dataset</a>
+          <details>
+            <summary>BibTeX</summary>
+<pre>@article{enkera2026simto,
+  title   = {SimTO: A two-stage, simulation-driven topology optimization framework for bespoke soft robotic grippers},
+  author  = {Enkera, Kurt and Pinskier, Josh and Gallagher, Marcus and Howard, David},
+  journal = {Structural and Multidisciplinary Optimization},
+  year    = {2026},
+  doi     = {10.1007/s00158-026-04373-z}
+}</pre>
+          </details>
+        </div>
+        <div class="tldr">
+          Automatically extracts load cases from a contact-rich grasping simulation, then runs classical
+          topology optimization to produce soft fingers tailored to feature-rich objects such as gears,
+          stars and spiky balls.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2026 Kurt Enkera
+  </footer>
+
+</div>
+</body>
+</html>
