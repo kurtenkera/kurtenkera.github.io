@@ -70,9 +70,8 @@
             font-size: 1.1rem;
             color: #444;
             margin-top: 15px;
-            padding: 0 40px;
+            padding: 0;              /* all captions span the full content width */
         }
-        .teaser-image .caption { padding: 0; }   /* full width under the hero figure */
         .ai { font-size: 1.2rem; vertical-align: middle; }
         .math { font-family: 'Times New Roman', 'STIX Two Math', serif; font-style: italic; }
 
@@ -123,7 +122,6 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .gallery { grid-template-columns: repeat(2, 1fr); }
-            .caption { padding: 0 10px; }
         }
 
         /* BibTeX Styling */
@@ -192,7 +190,7 @@
             It is then re-grasped and lifted during <span class="math">t</span><sub>3</sub> before undergoing four impulse-resistance tests, where the impulses grow in magnitude.
             First, the gripper is accelerated in all five directions shown in blue. After, the gripper is shaken at three increasing accelerations.
             If the object is still held, it is placed back on the target at <span class="math">t</span><sub>4</sub>. Each design is tested on five feature-rich objects, each in six grasp poses (30 trials per design).
-        </p>W
+        </p>
     </section>
 
     <section>
