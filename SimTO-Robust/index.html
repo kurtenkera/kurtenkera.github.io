@@ -63,7 +63,7 @@
         }
         .teaser-image img {
             width: 100%;
-            max-width: 500px;        /* hero figure size: increase/decrease to taste */
+            max-width: 800px;        /* hero figure size: increase/decrease to taste */
             height: auto;
         }
         .caption {
@@ -162,9 +162,11 @@
     </div>
 
     <div class="teaser-image">
-        <img src="media/fig1.png" alt="SimTO-Robust method overview">
+        <img src="media/fig1_with_results.png" alt="SimTO-Robust method overview">
         <p class="caption">
-            <strong>The SimTO-Robust framework:</strong> Whereas SimTO simulates a gripper grasping a single object in a single pose, SimTO-Robust (i) simulates grasps of <span class="math">K</span> objects in <span class="math">P</span> poses, (ii) combines the resulting contact forces, and (iii) uses them to update the gripper through topology optimisation. Iterating steps (i)&ndash;(iii) produces grippers with larger workspaces, grooved contact surfaces and other diverse features for more robust grasping than specialised SimTO designs and baseline rigid and soft grippers.
+            <strong>(a)</strong> Whereas SimTO simulates one object in one pose, SimTO-Robust (i) simulates grasps of <span class="math">K</span> objects in <span class="math">P</span> poses, (ii) combines the resulting contact forces, and (iii) uses them to update the design through topology optimisation. Iterating steps (i)&ndash;(iii) produces grippers that have larger workspaces, grooved contact surfaces and other diverse features for more robust grasping than SimTO designs and baseline rigid and soft grippers.
+            <strong>(b)</strong> Pick-and-place experiments (<span class="math">t</span><sub>0</sub>: pick, <span class="math">t</span><sub>1</sub>: transport, <span class="math">t</span><sub>2</sub>: place) showing representative failure modes of SimTO designs (left) and success modes of SimTO-Robust designs (right).
+            <strong>(c)</strong> Results are averages over 30 grasps (five objects in six poses) for the best-performing design per group. <em>Pick-and-place success</em> is the percentage of grasps that successfully completed pick-and-place, while <em>disturbance rejection success</em> is the percentage of four subsequent disturbances that each grasp withstood.
         </p>
     </div>
 </div>
