@@ -110,8 +110,8 @@
         .gallery figure { margin: 0; }
         .gallery img {
             width: 100%;
-            aspect-ratio: 1 / 1;      /* square tiles; remove for natural aspect */
-            object-fit: cover;
+            aspect-ratio: 460 / 632;  /* matches the photos (460 x 632 px), so nothing is cropped */
+            object-fit: contain;      /* never crop, even if a photo has a different shape */
             border-radius: 8px;
             background: #f0f0f0;      /* visible while an image is missing */
             display: block;
