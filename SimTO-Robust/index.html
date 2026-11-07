@@ -89,7 +89,7 @@
 
         /* Full-width figures inside sections */
         .figure { margin-top: 20px; text-align: center; }
-        .figure img { width: 100%; height: auto; border-radius: 8px; }
+        .figure img { width: 100%; height: auto; border-radius: 8px; }   /* unused now; kept for future figures */
 
         /* Video Grids */
         .video-grid {
@@ -181,23 +181,6 @@
         <h2>Abstract</h2>
         <p>
             Robotic grippers operating in unstructured environments must robustly grasp objects of different shapes and sizes despite perception and positioning errors. Soft grippers that can achieve this robustness through intelligent mechanical design rather than sophisticated control software offer a promising solution. However, no existing computational design framework explicitly optimises soft gripper morphology for robustness across object geometries and grasp poses. We introduce SimTO-Robust, a generalisation of simulation-driven topology optimisation (SimTO) that simulates grasps across multiple objects and poses and aggregates their contact forces to guide gripper morphology optimisation. We generate 6,646 designs and physically evaluate 24 of them alongside 10 specialised SimTO designs, two rigid baseline grippers, and a baseline generalist soft gripper produced using conventional topology optimisation. All 37 grippers are tested in a pick-and-place task involving five feature-rich objects and six grasp poses, with external disturbances of increasing magnitude applied during the task. On average, SimTO-Robust designs complete pick-and-place more reliably than specialised SimTO designs and the rigid baselines. The best SimTO-Robust designs also withstood more of the applied disturbances than any other tested gripper. These results show that incorporating diverse grasp conditions into simulation-driven topology optimisation is a simple and effective approach to improving real-world soft gripper robustness. More broadly, they show that robust robotic grasping can be achieved through intelligent mechanical design rather than sophisticated sensing and control.
-        </p>
-    </section>
-
-    <section>
-        <h2>Experimental Grasp Robustness Tests</h2>
-        <div class="figure">
-            <img src="media/experimental_setup.png" alt="Experimental Grasp Robustness Tests">
-        </div>
-        <p class="caption">
-            We compare 24 SimTO-Robust designs against 10 specialised SimTO designs, two rigid grippers and a soft reference gripper in a pick-and-place task with external impulses applied throughout.
-            <strong>(a):</strong> Soft grippers are mounted on a UR10e arm and actuated by a linear pneumatic actuator.
-            <strong>(b):</strong> Our parallel-jaw rigid gripper.
-            <strong>(c)&ndash;(e):</strong> In each trial, the object is first grasped at <span class="math">t</span><sub>0</sub>, transported during <span class="math">t</span><sub>1</sub> and placed at <span class="math">t</span><sub>2</sub>.
-            It is then re-grasped and lifted during <span class="math">t</span><sub>3</sub> before undergoing four impulse-resistance tests of increasing magnitude:
-            the first accelerates the gripper in each of the five directions shown in blue, and the remaining three shake it at increasing accelerations.
-            If the object is still held, it is placed back on the target at <span class="math">t</span><sub>4</sub>.
-            Each design is tested on five feature-rich objects in six grasp poses (30 trials per design).
         </p>
     </section>
 
